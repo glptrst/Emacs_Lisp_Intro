@@ -1,0 +1,28 @@
+* 1 List Processing
+** Generate an error message by evaluating an appropriate symbol that is not within parentheses.
+#+BEGIN_SRC emacs-lisp
+  + ;; --> (void-variable +)
+#+END_SRC
+
+
+** Generate an error message by evaluating an appropriate symbol that is between parentheses.
+#+BEGIN_SRC emacs-lisp
+  (+ "hi") ;; --> Debugger entered--Lisp error: (wrong-type-argument number-or-marker-p "hi")
+
+  (+ hi) ;; --> (void-variable hi)
+
+  (hi) ;; --> (void-function hi)
+#+END_SRC
+
+
+** Create a counter that increments by two rather than one.
+#+BEGIN_SRC emacs-lisp
+  (setq counter 0)
+  (setq counter (+ counter 2))
+#+END_SRC
+
+
+** Write an expression that prints a message in the echo area when evaluated.
+#+BEGIN_SRC emacs-lisp
+  (message "Hello world")
+#+END_SRC
