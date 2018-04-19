@@ -1,0 +1,14 @@
+* 2 Practicing Evaluation
+** Find a file with which you are working and move towards its middle. Find its buffer name, file name, length, and your position in the file.
+
+C-x C-f ...
+
+C-n ...
+
+(buffer-name)
+
+(buffer-file-name)
+
+(buffer-size)
+
+(point)
