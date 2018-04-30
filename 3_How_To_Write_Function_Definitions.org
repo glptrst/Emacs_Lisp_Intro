@@ -1,0 +1,20 @@
+* 3 How To Write Functions Definitions
+** Write a non-interactive function that doubles the value of its argument, a number. Make that function interactive.
+#+BEGIN_SRC emacs-lisp
+    (defun double-num (num)
+      "Double a number"
+      (* num 2))
+
+
+    (defun double-num (num)
+      "Double a number"
+      (interactive "p")
+      (message (number-to-string (* num 2))))
+#+END_SRC
+** Write a function that tests whether the current value of fill-column is greater than the argument passed to the function, and if so, prints an appropriate message.
+#+BEGIN_SRC emacs-lisp
+  (defun test-fill-column (value)
+    "test `fill-column`"
+    (if (> fill-column value)
+        (message "fill-column is greater than %s!" value)))
+#+END_SRC
