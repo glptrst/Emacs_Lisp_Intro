@@ -1,0 +1,10 @@
+* Write your own 'simplified-end-of-buffer' function definition; then test it to see whether it works.
+
+#+BEGIN_SRC emacs-lisp
+  (defun simplified-end-of-buffer ()
+      "Move point to the end of the buffer;
+  leave mark at previous position."
+      (interactive)
+      (push-mark)
+      (goto-char (point-max)))
+#+END_SRC
