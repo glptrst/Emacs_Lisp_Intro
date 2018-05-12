@@ -1,4 +1,4 @@
-* Write your own 'simplified-end-of-buffer' function definition; then test it to see whether it works.
+* Write your own ‘simplified-end-of-buffer’ function definition; then test it to see whether it works.
 
 #+BEGIN_SRC emacs-lisp
   (defun simplified-end-of-buffer ()
@@ -8,3 +8,23 @@
       (push-mark)
       (goto-char (point-max)))
 #+END_SRC
+
+* Use ‘if’ and ‘get-buffer’ to write a function that prints a message telling you whether a buffer exists.
+
+#+BEGIN_SRC emacs-lisp
+  (defun buffer-exists (buffer)
+    "Tell if a buffer exists"
+    (if (eq (get-buffer buffer) nil)
+        (message "buffer doesn't exist")
+      (message "buffer exists")))
+#+END_SRC
+
+* Using ‘find-tag’, find the source for the ‘copy-to-buffer’ function.
+I've created the TAGS file with "etags *.el.gz ..." in the lisp
+directory of Emacs.
+
+Since find-tags apparently looks for the definitions in .el files
+instead of .el.gz file, I've run a query-replace in the TAGS file
+replacing ".el" with ".el.gz".
+
+M-x find-tags now works (after having selected the TAGS file).
