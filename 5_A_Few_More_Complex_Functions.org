@@ -1,0 +1,12 @@
+* Write an interactive function with an optional argument that tests whether its argument, a number, is greater than or equal to, or else, less than the value of ‘fill-column’, and tells you which, in a message. However, if you do not pass an argument to the function, use 56 as a default value.
+#+BEGIN_SRC emacs-lisp
+  (defun myf (&optional arg)
+    "Test whether its argument, a number, is greater than or equal to, or else,
+  less than the value of ‘fill-column’, and tell you which, in a message"
+    (let ((val (or arg 56)))
+      (if (< val fill-column)
+          (message "%d is less than the value of fill-column, which is %d" val fill-column)
+        (if (> val fill-column)
+            (message "%d is greater than the value of fill-column, which is %d" val fill-column)
+          (message "%d is equal to the value of fill-column!" val fill-column)))))
+#+END_SRC
