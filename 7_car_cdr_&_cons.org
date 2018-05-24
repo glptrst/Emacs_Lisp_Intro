@@ -1,0 +1,26 @@
+#+BEGIN_SRC emacs-lisp
+  ;; Construct a list of four birds by evaluating several expressions with
+  ;; ‘cons’.  Find out what happens when you ‘cons’ a list onto itself.
+  ;; Replace the first element of the list of four birds with a fish.
+  ;; Replace the rest of that list with a list of other fish.
+
+  (setq bird-list (cons 'pigeon (cons 'cuckoo (cons 'raven (cons 'magpie ())))))
+
+  bird-list
+  ;; => (pigeon cuckoo raven magpie)
+
+  (cons bird-list bird-list)
+  ;; => ((pigeon cuckoo raven magpie) pigeon cuckoo raven magpie)
+
+  (setcar bird-list 'salmon)
+  ;; => salmon
+
+  bird-list
+  ;; => (salmon cuckoo raven magpie)
+
+  (setcdr bird-list '(halibut tuna cod))
+  ;; => (halibut tuna cod)
+
+  bird-list
+  ;; => (salmon halibut tuna cod)
+#+END_SRC
