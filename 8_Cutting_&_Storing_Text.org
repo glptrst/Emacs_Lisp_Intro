@@ -1,0 +1,14 @@
+* Cutting and Storing Text
+#+BEGIN_SRC emacs-lisp
+  ;; Write an interactive function that searches for a string.  If the
+  ;; search finds the string, leave point after it and display a message
+  ;; that says “Found!”.  (Do not use ‘search-forward’ for the name of this
+  ;; function; if you do, you will overwrite the existing version of
+  ;; ‘search-forward’ that comes with Emacs.  Use a name such as
+  ;; ‘test-search’ instead.)
+
+  (defun my-search-forward (string-to-search)
+    (interactive "s")
+    (search-forward string-to-search)
+    (message "Found!"))
+#+END_SRC
