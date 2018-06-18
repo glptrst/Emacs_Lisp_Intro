@@ -12,3 +12,14 @@
     (search-forward string-to-search)
     (message "Found!"))
 #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  ;; Write a function that prints the third element of the kill ring
+  ;; in the echo area, if any; if the kill ring does not contain a
+  ;; third element, print an appropriate message.
+
+  (defun print-kill-ring-3rd-el ()
+    (if (eq (nth 3 kill-ring) nil)
+        (message "No third element in the kill-ring")
+      (message "Third el: ?")))
+#+END_SRC
