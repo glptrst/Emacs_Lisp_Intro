@@ -1,0 +1,15 @@
+* Loops and Recursion
+
+#+BEGIN_SRC emacs-lisp
+  ;; Write a function similar to ‘triangle’ in which each row has a
+  ;; value which is the square of the row number.  Use a ‘while’ loop.
+
+  (defun triangle-square (number-of-rows)
+    (let ((result 0)
+          (row-number 1))
+      (while (<= row-number number-of-rows)
+        (setq result (+ result (* row-number row-number)))
+        (setq row-number (+ 1 row-number)))
+      result))
+
+#+END_SRC
