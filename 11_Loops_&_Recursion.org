@@ -5,6 +5,10 @@
   ;; value which is the square of the row number.  Use a ‘while’ loop.
 
   (defun triangle-square (number-of-rows)
+    "Add up the square of the number of pebbles of each row in a triangle.
+       The first row has one pebble, the second row two pebbles,
+       the third row three pebbles, and so on.
+       The argument is NUMBER-OF-ROWS."
     (let ((result 0)
           (row-number 1))
       (while (<= row-number number-of-rows)
@@ -12,4 +16,21 @@
         (setq row-number (+ 1 row-number)))
       result))
 
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  ;; Write a function similar to ‘triangle’ that multiplies instead of
+  ;; adds the values.
+
+  (defun triangle-multiply (number-of-rows)
+    "Multiply up the number of pebbles of each row in a triangle.
+       The first row has one pebble, the second row two pebbles,
+       the third row three pebbles, and so on.
+       The argument is NUMBER-OF-ROWS."
+    (let ((result 1)
+          (row-number 1))
+      (while (<= row-number number-of-rows)
+        (setq result (* result row-number))
+        (setq row-number (+ 1 row-number)))
+      result))
 #+END_SRC
