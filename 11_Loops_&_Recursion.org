@@ -40,9 +40,9 @@
   ;; using ‘cond’.
   (defun triangle-square-recursively (number)
     "Add up the square of the number of pebbles of each row in a triangle.
-           The first row has one pebble, the second row two pebbles,
-           the third row three pebbles, and so on.  The argument is
-           NUMBER-OF-ROWS.  Uses recursion."
+               The first row has one pebble, the second row two pebbles,
+               the third row three pebbles, and so on.  The argument is
+               NUMBER-OF-ROWS.  Uses recursion."
     (if (= number 1)
         1
       (+ (* number number)
@@ -50,11 +50,25 @@
 
   (defun triangle-multiply-recursively (number)
     "Multiply up the number of pebbles of each row in a triangle.
-         The first row has one pebble, the second row two pebbles,
-         the third row three pebbles, and so on.
-         The argument is NUMBER-OF-ROWS. User recursion."
+             The first row has one pebble, the second row two pebbles,
+             the third row three pebbles, and so on.
+             The argument is NUMBER-OF-ROWS. User recursion."
     (if (= number 1)
         1
       (* number
          (triangle-multiply-recursively (- number 1)))))
+
+  (defun triangle-square-recursively-using-cond (number)
+    "Add up the square of the number of pebbles of each row in a triangle.
+               The first row has one pebble, the second row two pebbles,
+               the third row three pebbles, and so on.  The argument is
+               NUMBER-OF-ROWS.  Uses recursion and `cond`."
+    (cond ((= number 1) 1)
+          ((> number 1)
+           (+ (* number number) (triangle-square-recursively-using-cond (1- number))))))
+
+  (defun triangle-multiply-recursively-using-cond (number)
+    (cond ((= number 1) 1)
+          ((> number 1)
+           (* number (triangle-multiply-recursively-using-cond (1- number))))))
 #+END_SRC
